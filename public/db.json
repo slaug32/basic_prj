@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 1,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 2,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 3,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 4,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 5,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 6,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    },
+    {
+      "id": 7,
+      "image": "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      "name": "name",
+      "price": 122222
+    }
+  ]
+}
