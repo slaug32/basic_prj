@@ -1,12 +1,17 @@
 import React from "react";
 import { AppleProduct } from "./components/AppleProduct";
-import { Slider } from "./components/Slider";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
-export const Main = ({ products }) => {
+export const Main = () => {
+  const { products } = useSelector(({ main }) => {
+    return {
+      products: main.products,
+    };
+  });
+
   return (
     <div className="container p-20 mt-10">
-      {/* <Slider /> */}
       <div className="p-20 mt-40">
         <h1>Все товары</h1>
         <div className="container__content d-flex">

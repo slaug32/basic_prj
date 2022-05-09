@@ -7,21 +7,15 @@ import { Main } from "./pages/Main";
 import { Header } from "./pages/components/Header";
 import { Footer } from "./pages/components/Footer";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { AppleProduct } from "./pages/components/AppleProduct";
 
 const App = () => {
-  const [products, setProducts] = React.useState([]);
-
-  React.useEffect(() => {
-    axios.get("http://localhost:3001/products").then(({ data }) => {
-      setProducts(data);
-    });
-  }, []);
-
   return (
     <div className="App clear p-20">
       <Header />
       <Routes>
-        <Route path="/" element={<Main products={products} />} />
+        <Route path="/" element={<Main />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/history" element={<History />} />
       </Routes>

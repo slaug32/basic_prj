@@ -2,8 +2,46 @@ const IS_FETCHING = "IS_FETCHING";
 const SET_PRODUCTS = "SET_PRODUCTS";
 
 const initialState = {
-  items: [],
+  products: [
+    {
+      id: 1,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+    {
+      id: 2,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+    {
+      id: 3,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+    {
+      id: 4,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+    {
+      id: 5,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+    {
+      id: 6,
+      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
+      name: "name",
+      price: 12000,
+    },
+  ],
   isFetching: false,
+  full: "fghjk",
 };
 
 const mainReducer = (state = initialState, action) => {

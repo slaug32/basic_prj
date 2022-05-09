@@ -10,7 +10,7 @@ export const AppleProduct = ({ image, name, price }) => {
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column ">
           <span>Цена:</span>
-          <h3>{price} руб</h3>
+          <h3>{price}</h3>
         </div>
         <button className="button">
           <img width="20px" src={Check} />
