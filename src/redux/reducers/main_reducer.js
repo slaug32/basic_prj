@@ -1,55 +1,19 @@
+import axios from "axios";
 const IS_FETCHING = "IS_FETCHING";
-const SET_PRODUCTS = "SET_PRODUCTS";
+const SET_ITEMS = "SET_ITEMS";
 
 const initialState = {
-  products: [
-    {
-      id: 1,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-    {
-      id: 2,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-    {
-      id: 3,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-    {
-      id: 4,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-    {
-      id: 5,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-    {
-      id: 6,
-      image: "http://pngimg.com/uploads/apple_logo/apple_logo_PNG19689.png",
-      name: "name",
-      price: 12000,
-    },
-  ],
+  items: [],
   isFetching: false,
-  full: "fghjk",
 };
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_PRODUCTS:
+    case SET_ITEMS:
       return {
         ...state,
         items: action.payload,
+        isFetching: true,
       };
     case IS_FETCHING:
       return {
@@ -60,16 +24,23 @@ const mainReducer = (state = initialState, action) => {
   return state;
 };
 
-export const main = (payload) => ({
+export const IsFetching = (payload) => ({
   type: IS_FETCHING,
   payload,
 });
 
-export const setProducts = (items) => ({
-  type: SET_PRODUCTS,
+export const setItems = (items) => ({
+  type: SET_ITEMS,
   payload: items,
 });
 
-export default mainReducer;
+export const fetchItems = () => (dispatch) => {
+  dispatch({
+    type: IS_FETCHING,
+    payloaad: false,
+  });
 
-// "server": "npx json-server --watch public/server.json --port=3001",
+  axios.get("/items").then(({ data }) => dispatch(setItems(data)));
+};
+
+export default mainReducer;

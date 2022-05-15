@@ -3,8 +3,11 @@ import Logo from "../../images/logo.png";
 import Basket from "../../images/basket.png";
 import Accaunt from "../../images/accaunt.png";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-export const Header = () => {
+export const Header = ({ setSearch }) => {
+  const { totalPrice } = useSelector(({ basket }) => basket);
+
   return (
     <header className="d-flex justify-between align-center pt-15">
       <div className="d-flex align-center">
@@ -22,6 +25,9 @@ export const Header = () => {
             <input
               className="header__left-search mr-30"
               placeholder="Поиск товаров..."
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
             />
           </div>
           <li className="mr-5">
@@ -29,7 +35,7 @@ export const Header = () => {
               <img width="16px" src={Basket} />
             </NavLink>
           </li>
-          <span>1200руб</span>
+          <span>{totalPrice} руб</span>
           <li className="ml-20">
             <NavLink to="/history">
               <img width="16px" src={Accaunt} />

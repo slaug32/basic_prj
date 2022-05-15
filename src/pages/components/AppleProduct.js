@@ -1,8 +1,12 @@
 import React from "react";
 import Check from "../../images/check.png";
-// import Apple from "../../images/apple.jpg";
 
-export const AppleProduct = ({ image, name, price }) => {
+export const AppleProduct = ({ id, image, name, price, onAddProduct }) => {
+  const onAddClickProduct = () => {
+    const productObj = { id, name, price, image };
+    onAddProduct(productObj);
+  };
+
   return (
     <div className="cart">
       <img width="150px" src={image} />
@@ -10,9 +14,9 @@ export const AppleProduct = ({ image, name, price }) => {
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column ">
           <span>Цена:</span>
-          <h3>{price}</h3>
+          <h3>{price} руб.</h3>
         </div>
-        <button className="button">
+        <button className="button" onClick={onAddClickProduct}>
           <img width="20px" src={Check} />
         </button>
       </div>
