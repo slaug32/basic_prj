@@ -1,6 +1,6 @@
 import axios from "axios";
 const IS_FETCHING = "IS_FETCHING";
-const SET_ITEMS = "SET_ITEMS";
+const SET_PRODUCTS = "SET_PRODUCTS";
 
 const initialState = {
   items: [],
@@ -9,7 +9,7 @@ const initialState = {
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_ITEMS:
+    case SET_PRODUCTS:
       return {
         ...state,
         items: action.payload,
@@ -29,18 +29,18 @@ export const IsFetching = (payload) => ({
   payload,
 });
 
-export const setItems = (items) => ({
-  type: SET_ITEMS,
+export const setProducts = (items) => ({
+  type: SET_PRODUCTS,
   payload: items,
 });
 
-export const fetchItems = () => (dispatch) => {
+export const fetchProducts = () => (dispatch) => {
   dispatch({
     type: IS_FETCHING,
     payloaad: false,
   });
 
-  axios.get("/items").then(({ data }) => dispatch(setItems(data)));
+  axios.get("http://localhost:3001/products").then(({ data }) => dispatch(setProducts(data)));
 };
 
 export default mainReducer;

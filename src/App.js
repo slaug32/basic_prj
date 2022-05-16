@@ -9,27 +9,22 @@ import { Footer } from "./pages/components/Footer";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AppleProduct } from "./pages/components/AppleProduct";
-import { fetchItems, setItems } from "./redux/reducers/main_reducer";
+import { fetchProducts, setItems } from "./redux/reducers/main_reducer";
 import { Preloader } from "./pages/components/Preloader";
 import { EmptyBasket } from "./pages/components/EmptyBasket";
 
 const App = () => {
   const dispatch = useDispatch();
+  const items = useSelector(({ main }) => main.items);
 
   const [value, setSearch] = React.useState("");
-
-  const { items } = useSelector(({ main }) => {
-    return {
-      items: main.items,
-    };
-  });
 
   const filteredName = items.filter((items) => {
     return items.name.toLowerCase().includes(value.toLowerCase());
   });
 
   React.useEffect(() => {
-    dispatch(fetchItems());
+    dispatch(fetchProducts());
   }, []);
 
   return (

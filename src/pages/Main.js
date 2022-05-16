@@ -7,6 +7,7 @@ import { Preloader } from "./components/Preloader";
 
 export const Main = ({ filteredName }) => {
   const isFetching = useSelector(({ main }) => main.isFetching);
+  const basketItems = useSelector(({ basket }) => basket.items);
 
   const dispatch = useDispatch();
 
@@ -28,6 +29,9 @@ export const Main = ({ filteredName }) => {
                 name={p.name}
                 price={p.price}
                 onAddProduct={onAddProduct}
+                addCountProduct={
+                  basketItems[p.id] && basketItems[p.id].items.length
+                }
               />
             ))
           ) : (

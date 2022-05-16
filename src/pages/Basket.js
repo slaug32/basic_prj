@@ -4,6 +4,7 @@ import { clearBasket } from "../redux/reducers/basket_reducer";
 import { MyButton } from "../UI/MyButton";
 import { BasketProduct } from "./components/BasketProduct";
 import { EmptyBasket } from "./components/EmptyBasket";
+import { removeBasketProduct } from "./../redux/reducers/basket_reducer";
 
 export const Basket = () => {
   const { totalAmount, totalPrice, items } = useSelector(
@@ -12,13 +13,20 @@ export const Basket = () => {
 
   const dispatch = useDispatch();
 
-  const basketAddProducts = Object.keys(items).map((key) => {
-    return items[key][0];
+  const addProducts = Object.keys(items).map((key) => {
+    console.log(items);
+    return items[key].items[0];
   });
 
   const onClearBasket = () => {
     if (window.confirm("Вы действительно хотите очистить корзину?")) {
       dispatch(clearBasket());
+    }
+  };
+
+  const removeProduct = (id) => {
+    if (window.confirm("Вы действительно хотите удалить продукт из корзины?")) {
+      dispatch(removeBasketProduct(id));
     }
   };
 
@@ -28,14 +36,17 @@ export const Basket = () => {
         <div className="container p-20 mt-10">
           <div className="basket mt-40 p-20">
             <h1>Добавленные товары</h1>
-            <div className="basket__products">
-              {basketAddProducts.map((p) => {
+            <div>
+              {addProducts.map((p) => {
                 <BasketProduct
                   key={p.id}
                   id={p.id}
                   name={p.name}
                   price={p.price}
                   image={p.image}
+                  totalPriceProduct={items[p.id].totalPrice}
+                  totalAmountProduct={items[p.id].items.length}
+                  removeProduct={removeProduct}
                 />;
               })}
             </div>
