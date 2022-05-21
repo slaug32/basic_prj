@@ -14,29 +14,15 @@ import { Preloader } from "./pages/components/Preloader";
 import { EmptyBasket } from "./pages/components/EmptyBasket";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const items = useSelector(({ main }) => main.items);
-
-  const [value, setSearch] = React.useState("");
-
-  const filteredName = items.filter((items) => {
-    return items.name.toLowerCase().includes(value.toLowerCase());
-  });
-
-  React.useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
+  const [search, setSearch] = React.useState("");
 
   return (
     <div className="App clear p-20">
       <Header setSearch={setSearch} />
       <Routes>
-        <Route
-          path="/"
-          element={<Main items={items} filteredName={filteredName} />}
-        />
+        <Route path="/" element={<Main search={search} />} />
         <Route path="/basket" element={<Basket />} />
-        <Route path="/history" element={<History items={items} />} />
+        <Route path="/history" element={<History />} />
       </Routes>
       <Footer />
     </div>

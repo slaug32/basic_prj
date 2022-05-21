@@ -4,12 +4,22 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { addProductBasket } from "./../redux/reducers/basket_reducer";
 import { Preloader } from "./components/Preloader";
+import { fetchProducts } from "./../redux/reducers/main_reducer";
 
-export const Main = ({ filteredName }) => {
+export const Main = ({ search }) => {
   const isFetching = useSelector(({ main }) => main.isFetching);
   const basketItems = useSelector(({ basket }) => basket.items);
+  const items = useSelector(({ main }) => main.items);
 
   const dispatch = useDispatch();
+
+  const filteredName = items.filter((items) => {
+    return items.name.toLowerCase().includes(search.toLowerCase());
+  });
+
+  React.useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
 
   const onAddProduct = (productObj) => {
     dispatch(addProductBasket(productObj));

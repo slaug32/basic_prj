@@ -40,7 +40,9 @@ export const fetchProducts = () => (dispatch) => {
     payloaad: false,
   });
 
-  axios.get("http://localhost:3001/products").then(({ data }) => dispatch(setProducts(data)));
+  axios
+    .get("http://localhost:3001/products")
+    .then(({ data }) => dispatch(setProducts(data)));
 };
 
 export default mainReducer;
