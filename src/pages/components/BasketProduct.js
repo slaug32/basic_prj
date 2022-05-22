@@ -5,7 +5,6 @@ export const BasketProduct = ({
   id,
   image,
   name,
-  price,
   totalPriceProduct,
   totalAmountProduct,
   removeProduct,

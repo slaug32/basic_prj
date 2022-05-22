@@ -6,12 +6,6 @@ import { History } from "./pages/History";
 import { Main } from "./pages/Main";
 import { Header } from "./pages/components/Header";
 import { Footer } from "./pages/components/Footer";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { AppleProduct } from "./pages/components/AppleProduct";
-import { fetchProducts, setItems } from "./redux/reducers/main_reducer";
-import { Preloader } from "./pages/components/Preloader";
-import { EmptyBasket } from "./pages/components/EmptyBasket";
 
 const App = () => {
   const [search, setSearch] = React.useState("");

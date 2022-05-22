@@ -1,5 +1,4 @@
 import React from "react";
-import Apple from "../../images/apple.jpg";
 
 export const HistoryProduct = ({ price, image, name }) => {
   return (

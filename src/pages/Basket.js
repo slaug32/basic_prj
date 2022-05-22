@@ -6,7 +6,6 @@ import { BasketProduct } from "./components/BasketProduct";
 import { EmptyBasket } from "./components/EmptyBasket";
 import { removeBasketProduct } from "./../redux/reducers/basket_reducer";
 
-
 export const Basket = () => {
   const { totalAmount, totalPrice, items } = useSelector(
     ({ basket }) => basket
@@ -15,7 +14,6 @@ export const Basket = () => {
   const dispatch = useDispatch();
 
   const addProducts = Object.keys(items).map((key) => {
-    console.log(items);
     return items[key].items[0];
   });
 

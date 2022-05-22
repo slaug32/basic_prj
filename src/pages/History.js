@@ -1,6 +1,4 @@
 import React from "react";
-import { setItems } from "../redux/reducers/main_reducer";
-import { MyButton } from "../UI/MyButton";
 import { HistoryProduct } from "./components/HistoryProduct";
 import { useSelector } from "react-redux";
 

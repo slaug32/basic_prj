@@ -1,6 +1,5 @@
 import React from "react";
 import { AppleProduct } from "./components/AppleProduct";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { addProductBasket } from "./../redux/reducers/basket_reducer";
 import { Preloader } from "./components/Preloader";
