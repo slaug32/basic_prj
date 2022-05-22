@@ -12,9 +12,9 @@ export const Main = ({ search }) => {
 
   const dispatch = useDispatch();
 
-  const filteredName = items.filter((items) => {
-    return items.name.toLowerCase().includes(search.toLowerCase());
-  });
+  // const filteredName = items.filter((items) => {
+  //   return items.name.toLowerCase().includes(search.toLowerCase());
+  // });
 
   React.useEffect(() => {
     dispatch(fetchProducts());
@@ -30,7 +30,7 @@ export const Main = ({ search }) => {
         <h1>Все товары</h1>
         <div className="container__content d-flex flex-wrap">
           {isFetching ? (
-            filteredName.map((p) => (
+            items.map((p) => (
               <AppleProduct
                 key={p.id}
                 id={p.id}
