@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/apple_app/static/css/main.764537d1.css",
+    "main.js": "/apple_app/static/js/main.7187d53e.js",
+    "static/js/787.c1112931.chunk.js": "/apple_app/static/js/787.c1112931.chunk.js",
+    "static/media/preloader.gif": "/apple_app/static/media/preloader.68e4a45b92e913e7ea22.gif",
+    "static/media/NoBasket.jpg": "/apple_app/static/media/NoBasket.c1e9b08aca864ed30494.jpg",
+    "static/media/logo.png": "/apple_app/static/media/logo.1c4d01095ae3528493fe.png",
+    "index.html": "/apple_app/index.html",
+    "main.764537d1.css.map": "/apple_app/static/css/main.764537d1.css.map",
+    "main.7187d53e.js.map": "/apple_app/static/js/main.7187d53e.js.map",
+    "787.c1112931.chunk.js.map": "/apple_app/static/js/787.c1112931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.764537d1.css",
+    "static/js/main.7187d53e.js"
+  ]
+}
