@@ -12,6 +12,10 @@ export const Main = ({ search }) => {
 
   const dispatch = useDispatch();
 
+  const func = () => {
+    console.log("start");
+  };
+
   // const filteredName = items.filter((items) => {
   //   return items.name.toLowerCase().includes(search.toLowerCase());
   // });
