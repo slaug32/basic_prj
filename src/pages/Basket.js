@@ -29,6 +29,8 @@ export const Basket = () => {
     }
   };
 
+  console.log("status");
+
   return (
     <>
       {totalAmount ? (
